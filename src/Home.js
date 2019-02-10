@@ -11,6 +11,7 @@ class Home extends Component {
   componentDidMount() {
     window.fetch("/admin/workflows/getWorkflows", { method: "POST", headers: { "Content-Type": "application/json" } }).then(response => response.json()).then(data => {
       this.setState({ dataSource: data });
+      window.initResponsiveComponent();
     });
   }
 
